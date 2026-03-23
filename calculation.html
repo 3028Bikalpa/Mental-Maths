@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mental Math Practice - Calculation Arena</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="calculation">
+  <div class="shell">
+    <header class="topbar card">
+      <a class="brand" href="index.html">
+        <div class="brand-mark">M</div>
+        <div class="brand-copy">
+          <strong>Mental Math Practice</strong>
+          <span>Mental maths and memory training</span>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a class="active" href="calculation.html">Calculation Arena</a>
+        <a href="memory.html">Memory Arena</a>
+      </nav>
+    </header>
+
+    <div class="trainer-layout">
+      <aside class="sidebar card">
+        <div class="eyebrow">Calculation</div>
+        <h1>Mental calculation events</h1>
+        <p class="lede">Train arithmetic speed, concentration, and written-answer accuracy with the core mental calculation disciplines.</p>
+        <div class="search-wrap">
+          <input id="searchInput" type="search" placeholder="Filter events">
+        </div>
+        <div id="categoryList" class="category-list"></div>
+      </aside>
+
+      <main class="trainer-content">
+        <section class="hero-panel card">
+          <div class="hero-grid">
+            <div>
+              <div class="eyebrow">Arena Overview</div>
+              <h2 id="heroTitle">Calculation Arena</h2>
+              <p id="heroDescription" class="lede"></p>
+              <div class="hero-actions">
+                <button class="primary" id="heroStart">Start Selected Event</button>
+                <button class="secondary" id="resetStats">Reset Local Stats</button>
+                <button class="ghost" id="demoRound">Quick Demo Round</button>
+              </div>
+            </div>
+            <div class="hero-stats">
+              <div class="stat"><strong id="statCategories">0</strong><span class="subtle">Calculation events</span></div>
+              <div class="stat"><strong id="statAttempts">0</strong><span class="subtle">Saved attempts</span></div>
+              <div class="stat"><strong id="statBest">0</strong><span class="subtle">Best overall score</span></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-title">
+            <div>
+              <div class="eyebrow">Selected Event</div>
+              <h2 id="eventName"></h2>
+              <p id="eventSummary" class="hint"></p>
+            </div>
+            <div id="eventFamily" class="badge"></div>
+          </div>
+          <div id="configGrid" class="config-grid"></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-title">
+            <div>
+              <div class="eyebrow">Workspace</div>
+              <h2>Round Arena</h2>
+              <p class="hint">Use timed rounds to practice fast processing, stable attention, and precise answer entry under pressure.</p>
+            </div>
+            <div class="status"><span class="dot"></span><span id="statusText">Ready</span></div>
+          </div>
+          <div class="arena">
+            <div class="board">
+              <div class="flash-stage">
+                <div>
+                  <div class="subtle">Round display</div>
+                  <div id="flashValue" class="flash-value">Ready</div>
+                </div>
+              </div>
+              <div id="promptBlock" class="prompt">Choose an event and start a round.</div>
+              <div id="questionGrid" class="question-grid hidden"></div>
+              <div id="answersGrid" class="answers-grid hidden"></div>
+            </div>
+            <div class="coach">
+              <div class="metric"><span>Elapsed</span><strong id="metricElapsed">0.0s</strong></div>
+              <div class="metric"><span>Time left</span><strong id="metricRemaining">-</strong></div>
+              <div class="metric"><span>Current score</span><strong id="metricScore">0</strong></div>
+              <div class="metric"><span>Best score for event</span><strong id="metricBestEvent">0</strong></div>
+              <div class="actions">
+                <button class="primary" id="startRound">Start Round</button>
+                <button class="secondary" id="submitRound">Submit Answers</button>
+                <button class="ghost" id="revealRound">Reveal Solutions</button>
+              </div>
+              <div class="panel">
+                <div class="eyebrow">Round Notes</div>
+                <div id="roundNote" class="hint"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-title">
+            <div>
+              <div class="eyebrow">Scoreboard</div>
+              <h2>Saved Attempts</h2>
+            </div>
+          </div>
+          <div class="history-grid">
+            <div class="metric"><span>Current event attempts</span><strong id="metricEventAttempts">0</strong></div>
+            <div class="metric"><span>Current event average</span><strong id="metricEventAverage">0</strong></div>
+          </div>
+          <div style="margin-top:12px; overflow:auto;">
+            <table>
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Event</th>
+                  <th>Score</th>
+                  <th>Time</th>
+                  <th>Summary</th>
+                </tr>
+              </thead>
+              <tbody id="historyBody"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="site-credit card">
+      <strong>Based on the software from MEMORIAD&reg;</strong>
+      <span>World Memory, Mental Calculation &amp; Speed Reading Organization</span>
+    </footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
