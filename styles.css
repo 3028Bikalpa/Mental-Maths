@@ -245,8 +245,13 @@ button:not(.category-button):hover,
   box-shadow: 0 12px 24px rgba(20, 32, 41, 0.06);
 }
 
+.hero-stats {
+  align-content: start;
+}
+
 .landing-hero .stat {
   background: linear-gradient(180deg, rgba(255,252,247,0.96), rgba(246,239,229,0.94));
+  min-height: 148px;
 }
 
 .landing-hero .stat strong,
@@ -419,6 +424,7 @@ textarea:focus {
 .hero-panel .stat {
   background: linear-gradient(180deg, rgba(255,252,247,0.96), rgba(246,239,229,0.94));
   border-color: rgba(255, 255, 255, 0.16);
+  min-height: 140px;
 }
 
 .hero-panel .stat strong,
